@@ -1,0 +1,19 @@
+{
+  "name": "thoughttracker",
+  "version": "1.0.0",
+  "description": "training the mind outside of its usual thought patterns to create",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasminezalez/ThoughtTracker.git"
+  },
+  "author": "\"Jasmine Gonzalez Codesmith\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasminezalez/ThoughtTracker/issues"
+  },
+  "homepage": "https://github.com/jasminezalez/ThoughtTracker#readme"
+}
