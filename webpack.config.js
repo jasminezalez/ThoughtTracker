@@ -2,8 +2,10 @@ const HtmlWebpackPlugin = require ('html-webpack-plugin');
 const path = require('path');
 const { setgroups } = require('process');
 const { ModuleFilenameHelpers, SourceMapDevToolPlugin } = require('webpack');
+require('dotenv').config();
 
 module.exports = {
+    // mode: process.env.NODE_ENV
     mode: "development",
     entry: "/index.js",
     output: {
@@ -49,3 +51,5 @@ module.exports = {
     plugins: [new HtmlWebpackPlugin({template: '.index.html'})],
 
 };
+
+// how do I even know if this is working?

@@ -5,4 +5,4 @@ export function App() {
         <div>
             <h1> Brain Trainer/ Limitless / Thought Tracker { new Date().toString() } </h1>
         </div>
-    )
+    )}
