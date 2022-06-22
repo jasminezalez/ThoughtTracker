@@ -5,8 +5,8 @@ const { ModuleFilenameHelpers, SourceMapDevToolPlugin } = require('webpack');
 require('dotenv').config();
 
 module.exports = {
-    // mode: process.env.NODE_ENV
-    mode: "development",
+    mode: process.env.NODE_ENV,
+    // mode: "development",
     entry: "/index.js",
     output: {
         path: path.resolve(__dirname, './build'),

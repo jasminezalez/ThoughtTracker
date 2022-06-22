@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { number } = require('prop-types');
+// const { number } = require('prop-types');
 const Schema = mongoose.Schema;
 
 
