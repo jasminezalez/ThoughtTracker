@@ -14,30 +14,24 @@ mongoose.connection.once('open', () => {
   });
 
 app.use(express.json());
-app.use(express.urlencoded());
+// app.use(express.urlencoded());
 
-const thoughtRouter = express.Router();
-app.use('/', thoughtRouter)
+// const thoughtRouter = express.Router();
 
+app.use('/build', express.static(path.join(__dirname, 'build')));
+app.get('/', (req, res) => {
+    console.log("whatever")
+    return res.status(200).sendFile(path.join(__dirname, '/index.html'));
+  });
 
-// if (process.env.NODE_ENV === 'production') {
-//     shortcut to send html and css
-//     app.use(express.static('client'))
-//     // app.get('/', (req, res) )
-//     //to distinguish 
-// }
-
+// app.use('/', thoughtRouter)
 // app.use('/thoughts', thoughtController)
-
-thoughtRouter.post('/', thoughtController.addWord, thoughtController.getCount)
-
-// thoughtController.post('/', thoughtController.addCount, (req, res) => {
-//     res.status(201).json(res.locals.count);
+// thoughtRouter.post('/', thoughtController.addWord, (req, res)  => {
+//     console.log("anything")
+//     return res.status(201).json(res.locals.updatedCount);
 // })
 
-// thoughtController.get('/:word', thoughtController.getCount, (req, res) => {
-//     res.status(201).json(res.locals.totalCount);
-// })
+// thoughtController.get('/:word', thoughtController.getCount)
 
 // Global error handler
 app.use((err, req, res, next) => {
@@ -54,3 +48,4 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => console.log(`Listening on Port: ${PORT}`));
 
+module.exports = app
