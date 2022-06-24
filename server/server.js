@@ -14,22 +14,20 @@ mongoose.connection.once('open', () => {
   });
 
 app.use(express.json());
-// app.use(express.urlencoded());
+app.use(express.urlencoded());
 
-// const thoughtRouter = express.Router();
+const thoughtRouter = express.Router();
 
-app.use('/build', express.static(path.join(__dirname, 'build')));
+app.use('/', express.static(path.join(__dirname, '../build')));
 app.get('/', (req, res) => {
-    console.log("whatever")
-    return res.status(200).sendFile(path.join(__dirname, '/index.html'));
+    return res.status(200).sendFile(path.join(__dirname, '../build/index.html'));
   });
 
-// app.use('/', thoughtRouter)
+// app.use('/thoughts', thoughtRouter)
 // app.use('/thoughts', thoughtController)
-// thoughtRouter.post('/', thoughtController.addWord, (req, res)  => {
-//     console.log("anything")
-//     return res.status(201).json(res.locals.updatedCount);
-// })
+app.post('/', thoughtController.addWord, (req, res)  => {
+    return res.status(201).json(res.locals.updatedCount);
+})
 
 // thoughtController.get('/:word', thoughtController.getCount)
 
