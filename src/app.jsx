@@ -6,8 +6,8 @@ class App extends Component {
         super(props);
     }
     render (){
-        return <button jasmine/>,
-        <button>hello world</button>
+        return 
+        <div></div>
     }
 }
 
