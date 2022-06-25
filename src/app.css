@@ -1,8 +1,14 @@
 body {
     padding: 30px;
     font-size: 18px;
-    font-family: sans-serif;
-    background-image: url("https://source.unsplash.com/n2SEGqld_G8?auto=format&fit=crop&w1400");
+    font-family: georgia;
+    background: url("https://source.unsplash.com/n2SEGqld_G8?") no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
   }
 
   #box {
@@ -23,7 +29,8 @@ body {
       background-color: #b4a5a5;
       color: #353535;
       padding: 1.5rem;
-      border-radius: .4rem;
+      border-radius: .7rem;
+      text-align: center;
 
   }
 
@@ -34,6 +41,10 @@ body {
       border-radius: .4rem;
 
 
+  }
+
+  form {
+    font-size: 15px;
   }
 
   
