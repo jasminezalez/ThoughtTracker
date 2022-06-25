@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
 
+
 class App extends Component {
     render() {
         return (
           <div>
-            <SuccessCard feedUrl= {url}/>
+            {/* <SuccessCard feedUrl= {url}/> */}
           </div>
         );
       }

@@ -8,6 +8,7 @@ thoughtController.addWord = (req, res, next) => {
     // check if word exists in the database
     // if it exists, update it, otherwise create it 
      const { word } = req.body;
+     console.log(req.body);
     Thought.findOneAndUpdate( { word: word }, {$inc:{count:1}}, { returnDocument: 'after', upsert: true })
     .then((thoughtData) => {
             // if (!thoughtData) return next({ message: 'Thought has not been created'})
@@ -25,6 +26,7 @@ thoughtController.addWord = (req, res, next) => {
         //   message: { err: 'inside of addWord middleware inside of controller.js'}
         // });
 }
+
 
 
 

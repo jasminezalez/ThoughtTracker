@@ -15,10 +15,10 @@
                 Also, I fully realize that my confidence is released in action. If not backed by steady actions, it has no staying power. ​I am a very confident person; I always think Big, Act big, and Do Big!</p>
 
         </div>
-        <form>
+        <form action="/api" method="post" target="_blank">
             <label for="word"> After reading this, what thoughts go through your head? <br> Please keep thoughts to a single word <br> </label>
-            <input type="text" id="thought">
-            <input type="submit" value="submit">
+            <input type="text" id="thought" name="word">
+            <input type="submit" value="submit" onsubmit="handleClick(event)" onclick="handleClick(event)">
             
         </form>
     </article>
@@ -36,27 +36,28 @@
 
 <script> 
     
-    window.onload = () => {
-    
-    const body = document.querySelector('body');
-    const wordBox = document.querySelector('#box');
-    
-    
-    wordBox.onclick = () => {
-      fetch('/', {
+    function handleClick (event) {
+        event.preventDefault()
+        let word = document.getElementById("thought").value;
+        fetch('/api', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ word }),
+        body: JSON.stringify({word}),
       })
       .then(res => res.json())
       .then(data => {
-        body.innerText = data.word 
+        let word = data.word
+        console.log(word)
+        let count = data.count
+        console.log(count)
+        if (count === 3) {
+            // create an alert
+            
+        }
         // we need it to say either thank you for your response OR attention, you may need to look into this word
       })
-      .catch(err => console.log(err))
     }
-    } 
 
 </script>

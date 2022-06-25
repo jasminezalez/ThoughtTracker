@@ -47,6 +47,13 @@ body {
     font-size: 15px;
   }
 
+  .alert {
+    padding: 20px;
+    background-color: beige;
+    color: white;
+    margin-bottom: 15px;
+  }
+
   
 
 

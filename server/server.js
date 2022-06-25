@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 // app.use('/thoughts', thoughtRouter)
 // app.use('/thoughts', thoughtController)
-app.post('/', thoughtController.addWord, (req, res)  => {
+app.post('/api', thoughtController.addWord, (req, res)  => {
     return res.status(201).json(res.locals.updatedCount);
 })
 
